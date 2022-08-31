@@ -18,8 +18,8 @@
 name: release
 
 on:
-  schedule:
-    - cron: "10 23 * * *"
+  workflow_dispatch:
+    inputs:
 
 jobs:
   dev_v1_8_x:
