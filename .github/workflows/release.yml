@@ -22,35 +22,14 @@ on:
     - cron: "10 23 * * *"
 
 jobs:
-  main:
+  dev_v1_8_x:
     if: github.repository == 'apache/camel-k'
     uses: ./.github/workflows/release-workflow.yml
     with:
-      ref: "main"
+      ref: "dev-release-1.8.x"
       goVersion: "1.17.x"
       javaVersion: "11"
     secrets:
       registryUsername: ${{ secrets.TEST_DOCKER_HUB_USERNAME }}
       registryPassword: ${{ secrets.TEST_DOCKER_HUB_PASSWORD }}
-
-  v1_8_x:
-    if: github.repository == 'apache/camel-k'
-    uses: ./.github/workflows/release-workflow.yml
-    with:
-      ref: "release-1.8.x"
-      goVersion: "1.17.x"
-      javaVersion: "11"
-    secrets:
-      registryUsername: ${{ secrets.TEST_DOCKER_HUB_USERNAME }}
-      registryPassword: ${{ secrets.TEST_DOCKER_HUB_PASSWORD }}
-
-  v1_9_x:
-    if: github.repository == 'apache/camel-k'
-    uses: ./.github/workflows/release-workflow.yml
-    with:
-      ref: "release-1.9.x"
-      goVersion: "1.17.x"
-      javaVersion: "11"
-    secrets:
-      registryUsername: ${{ secrets.TEST_DOCKER_HUB_USERNAME }}
-      registryPassword: ${{ secrets.TEST_DOCKER_HUB_PASSWORD }}
+      
